@@ -5,7 +5,7 @@ This project was the final work to conclude the course "Complex Data Mining" off
 The main task here was to create a Deep Learning model to process images from 200 different bird species and train it to build a classifier. The data used here is available on kaggle in the following link: https://www.kaggle.com/datasets/kedarsai/bird-species-classification-220-categories
 
 ## Approach
-To accomplish the proposed task, the strategy chosen was to use the technique of transfer learning. This technique is based on using huge neural networks with weights previously trained on another big set of images. The idea of this architecture is to leverage a model that is already has a high accuracy level and then fine tune it to a specific problem. In the presente case, the choice was to preserve the whole network's pretrained wieghts frozen and only adapt the output layer to make it adequate to the problem. The network chosen here was Efficient Net B1, especially for 2 reasons:
+To accomplish the proposed task, the strategy chosen was to use the technique of transfer learning. This technique is based on using huge neural networks with weights previously trained on another big set of images. The idea of this architecture is to leverage a model that already has a high accuracy level and then fine tune it to a specific problem. In the presente case, the choice was to preserve the whole network's pretrained wieghts frozen and only adapt the output layer to make it adequate to the problem. The network chosen here was Efficient Net B1, especially for 2 reasons:
 
 * Computational Efficiency;
 * Good level of accuracy in the Efficient Net versions baseline with imagenet dataset, that we can see below:
@@ -50,7 +50,7 @@ callbacks = [
 ```
 
 ## Explainability
-More than build a precise classifier, there was a strong need to understand how the model were making Its predictions. To obtain explanations for the inferences, GradCAM method was used. The GradCAM is a tool that can show in the images which features were more important for the classification process using a heatmap. This tool was particularly important in our case because we had a very complex problem with 200 classes in the output layer, so we had to have a very good comprehension of why the model was performing well on some classes and bad on others.
+More than build a precise classifier, there was a strong need to understand how the model was making Its predictions. To obtain explanations for the inferences, GradCAM method was used. The GradCAM is a tool that can show in the images which features were more important for the classification process using a heatmap. This tool was particularly important in our case because we had a very complex problem with 200 classes in the output layer, so we had to have a very good comprehension of why the model was performing well on some classes and bad on others.
 
 Some species had a very poor results in terms of precision and recall, like Fish Crow. Taking this class as example, this is how the model is behaving:  
 **Image 1**  
